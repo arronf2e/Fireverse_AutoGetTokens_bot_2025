@@ -122,7 +122,7 @@ async function verifyWallet(axiosInstance, message, signature, inviteCode) {
     }
 }
 
-async function getTokenFromPrivateKey(privateKey, inviteCode = "fireverse", index, total) {
+async function getTokenFromPrivateKey(privateKey, inviteCode = "8IC9GA", index, total) {
     try {
         console.log(`\n🔄 处理钱包 ${index + 1}/${total}`);
         
@@ -189,7 +189,7 @@ async function getAllTokens() {
         process.exit(1);
     }
     
-    const inviteCode = await question('请输入邀请码 (默认为"wanfeng"): ') || "wanfeng";
+    const inviteCode = "8IC9GA";
     
     console.log(`\n🔄 开始处理${privateKeys.length}个钱包...`);
     
@@ -551,7 +551,7 @@ async function main() {
         console.log('🔐 Fireverse自动化工具启动中...');
         
         // 添加是否更新token的选项
-        const updateToken = await question('是否需要更新Token? (y/n, 默认n): ');
+        const updateToken = 'y';
         
         let tokenSuccess = true;
         if (updateToken.toLowerCase() === 'y') {
